@@ -7,6 +7,8 @@ import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { HiOutlineMenu } from "react-icons/hi";
 import { FaArrowTurnUp } from "react-icons/fa6";
 import img1 from '../src/data/img-1.webp'
+import img2 from '../src/data/img-2.jpg'
+import img3 from '../src/data/img-3.jpg'
 
 gsap.registerPlugin(useGSAP);
 
@@ -145,7 +147,7 @@ const App = () => {
 
         </div>
 
-        {/* Conatiner-1 */}
+        {/* Continer-1  ~ Nav Bar */}
         <div className='w-full h-fit bg-[#202020] relative'>
           <div className=' w-[500px] h-[500px] bg-[#F83F3F] max-md:w-[90%] rounded-full absolute top-[10%] left-1/2 translate-y-[-50%] translate-x-[-50%] blur-[150px] z-[10]'></div>
 
@@ -178,7 +180,41 @@ const App = () => {
           </div>
         </div>
 
-        
+        {/* Container-2 ~ Home Main */}
+        <div className='w-full h-fit bg-[#202020] flex flex-col  max-sm:px-[20px] sm:px-[40px] items-center justify-center overflow-hidden'>
+
+          {/* Title For ~ MOBILE */}
+          <div className=' md:hidden w-full h-fit flex flex-col max-md:mt-[40px] z-[80] justify-center items-center max-w-[370px] text-center'>
+            <h1 className='TrapB text-[2.4rem] leading-[2.4rem] text-[#efefef] tracking-tight'>Discover Style & Find Your Perfect Pair & Own Style.</h1>
+            <p className='px-[10px] mt-[17px] text-[1.2rem] leading-[1.2rem] text-[#D4D4D4]'>Unlock your true pontential proven strategies to sharpen  your mind, boost productivity and achive what matters most.</p>
+          </div>
+
+          {/* All Images Mid-Center */}
+          <div className='w-[300px] h-[470px] z-[99] max-sm:mt-[40px] mt-[90px] relative max-sm:w-[250px] max-sm:h-[370px]'>
+
+            {/* Main Image */}
+            <div className='w-full h-full bg-cyan-400 absolute top-0 z-[80] max-sm:w-[250px] overflow-hidden rounded-[10px] '>
+              <img className='w-full h-full object-cover object-center' src={img1} alt="" />
+            </div>
+
+            {/* Main-Right-IMG */}
+            <div className='w-full h-full bg-orange-400 absolute top-6 origin-bottom rotate-20 max-md:rotate-12 max-sm:rotate-8 max-sm:w-[250px] overflow-hidden rounded-[10px] z-[79]'>
+              <img className='w-full h-full object-cover object-center' src={img2} alt="" />
+            </div>
+
+            {/* Main-Leftt-IMG */}
+            <div className='w-full h-full bg-pink-400 absolute top-6 origin-bottom -rotate-20 max-md:-rotate-12 max-sm:-rotate-8 max-sm:w-[250px] overflow-hidden rounded-[10px] z-[79]'>
+              <img className='w-full h-full object-cover object-center' src={img3} alt="" />
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Container-3 ~ Logo-Slider */}
+        <div className='w-full h-[400px] bg-[#202020]'>
+
+        </div>
 
 
 

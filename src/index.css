@@ -13,6 +13,10 @@
     font-family: TrapR;
     src: url('../src/fonts/Trap-Regular.woff2');
 }
+@font-face {
+    font-family: TrapB;
+    src: url('../src/fonts/Trap-Bold.woff2');
+}
 
 .TrapM {
     font-family: TrapM;
@@ -24,4 +28,8 @@
 
 .TrapR{
     font-family: TrapR;
+}
+
+.TrapB{
+    font-family: TrapB;
 }
