@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: TrapM;
+    src: url('../src/fonts/Trap-Medium.woff2');
+}
+
+@font-face {
+    font-family: TrapSB;
+    src: url('../src/fonts/Trap-SemiBold.woff2');
+}
+@font-face {
+    font-family: TrapR;
+    src: url('../src/fonts/Trap-Regular.woff2');
+}
+
+.TrapM {
+    font-family: TrapM;
+}
+
+.TrapSB{
+    font-family: TrapSB;
+}
+
+.TrapR{
+    font-family: TrapR;
+}
