@@ -18,6 +18,10 @@
     src: url('../src/fonts/Trap-Bold.woff2');
 }
 
+body{
+    background-color: #202020;
+}
+
 .TrapM {
     font-family: TrapM;
 }
