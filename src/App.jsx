@@ -176,12 +176,22 @@ const App = () => {
       top:'5%',
       ease:'linear'
     },'b1')
+    TL2.to('.TChangeT',{
+      y:'-2.5rem',
+      delay:-0.02,
+      ease:'linear'
+    },'b1')
     TL2.to('.Show_img-2',{
       scale:0.8,
       ease:'linear'
     },'b2')
     TL2.to('.Show_img-3',{
       top:'5%',
+      ease:'linear'
+    },'b2')
+    TL2.to('.TChangeT',{
+      y:'-5rem',
+       delay:-0.02,
       ease:'linear'
     },'b2')
 
@@ -363,6 +373,14 @@ const App = () => {
             <img className='w-full h-full object-cover object-center' src={img6} alt="" />
           </div>
 
+          {/* Text_Change */}
+          
+
+            <div className='w-fit h-[2.5rem] flex defText flex-col text-[2.5rem] TrapSB leading-[2.5rem] tracking-tight absolute top-[80%] left-[50%] translate-x-[-50%] overflow-hidden'>
+              <span className='TChangeT'>#ClearFocus</span>
+              <span className='TChangeT'>#OwnStyle</span>
+              <span className='TChangeT'>#OwnMood</span>
+            </div>
 
 
         </div>

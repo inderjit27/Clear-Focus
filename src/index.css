@@ -37,3 +37,8 @@ body{
 .TrapB{
     font-family: TrapB;
 }
+
+.defText{
+    color: #fff;
+    mix-blend-mode: difference;    
+}
