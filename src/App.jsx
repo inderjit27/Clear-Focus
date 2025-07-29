@@ -9,6 +9,9 @@ import { FaArrowTurnUp } from "react-icons/fa6";
 import img1 from '../src/data/img-1.webp'
 import img2 from '../src/data/img-2.jpg'
 import img3 from '../src/data/img-3.jpg'
+import img4 from '../src/data/img-show-1.jpg'
+import img5 from '../src/data/img-show-2.jpg'
+import img6 from '../src/data/img-show-3.jpg'
 
 gsap.registerPlugin(useGSAP);
 
@@ -24,11 +27,10 @@ const App = () => {
 
   const TL1 = gsap.timeline()
 
-  
   const screenWidth = window.innerWidth;
   let rightRotate = 20;
   let leftRotate = -20;
-  
+
   if (screenWidth < 768) {
     rightRotate = 8;
     leftRotate = -8;
@@ -36,7 +38,7 @@ const App = () => {
     rightRotate = 12;
     leftRotate = -12;
   }
-  
+
   // ---------------------------------------- FUNCTIONS
 
   const welcomeAnimation = () => {
@@ -105,14 +107,14 @@ const App = () => {
     }, 'a2')
 
     // Title For All Devices 
-    TL1.to('.TTtitle, .TT-p',{
-      opacity:1,
-      stagger:0.3,
-      duration:0.7,
+    TL1.to('.TTtitle, .TT-p', {
+      opacity: 1,
+      stagger: 0.3,
+      duration: 0.7,
       ease: 'power3.inOut'
 
-    },'a3')
-   
+    }, 'a3')
+
 
     // 3_IMG
     TL1.to('.C2_img_main', {
@@ -132,7 +134,7 @@ const App = () => {
       ease: 'power3.inOut'
     }, 'a4')
     TL1.to('.cont-3', {
-      opacity:1,
+      opacity: 1,
       duration: 0.7,
       ease: 'power3.inOut'
     }, 'a4')
@@ -141,12 +143,49 @@ const App = () => {
   }
 
   const slideShow = () => {
-    gsap.to('.slide-text-box',{
-      x:'-50%',
-      duration:10,
-      ease:'linear',
-      repeat: -1 
+    gsap.to('.slide-text-box', {
+      x: '-50%',
+      duration: 10,
+      ease: 'linear',
+      repeat: -1
     })
+  }
+
+  const ShowImages = () => {
+    const TL2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.Show_Img_Cont',
+        start: 'top top',
+        end:'+=400%',
+        // markers: true,
+        scrub: 1,
+        pin: true
+      }
+    })
+    TL2.to('.Show_img-1',{
+      width:'90%',
+      height:'90dvh',
+      // duration:'1',
+      ease:'linear'
+    })
+    TL2.to('.Show_img-1',{
+      scale:0.8,
+      ease:'linear'
+    },'b1')
+    TL2.to('.Show_img-2',{
+      top:'5%',
+      ease:'linear'
+    },'b1')
+    TL2.to('.Show_img-2',{
+      scale:0.8,
+      ease:'linear'
+    },'b2')
+    TL2.to('.Show_img-3',{
+      top:'5%',
+      ease:'linear'
+    },'b2')
+
+
   }
 
   // ---------------------------------------- 
@@ -164,6 +203,7 @@ const App = () => {
   useEffect(() => {
     welcomeAnimation()
     slideShow()
+    ShowImages()
   }, [])
 
 
@@ -280,7 +320,7 @@ const App = () => {
 
         {/* Container-3 ~ Logo-Slider */}
         <div className='cont-3 opacity-0 w-full h-fit bg-[#202020] overflow-hidden flex pt-[50px] select-none'>
-          
+
           <span className='slide-text-box w-fit flex text-[5rem] TrapSB text-[#efefef] whitespace-nowrap will-change-transform'>
             <h1>CLEAR FOCUS</h1>
             <h1 className='text-[#bb1212]'>*</h1>
@@ -304,8 +344,31 @@ const App = () => {
 
         </div>
 
-        {/* Container-4 */}
-        <div className='w-full h-screen flex bg-[#202020]'>
+        {/* Container-4 Show-Images-Animate */}
+        <div className='Show_Img_Cont w-full h-[100dvh] flex flex-col bg-[#202020] items-center justify-center relative overflow-hidden '>
+
+
+          {/* 1-IMG-Container */}
+          <div className='Show_img-1 w-[50%] h-[50dvh] rounded-[20px] will-change-transform overflow-hidden '>
+            <img className='w-full h-full object-cover object-center' src={img4} alt="" />
+          </div>
+
+          {/* 2-IMG-Container */}
+          <div className='Show_img-2 w-[90%] h-[90dvh]  rounded-[20px] absolute top-[100%] will-change-transform overflow-hidden '>
+            <img className='w-full h-full object-cover object-center' src={img5} alt="" />
+          </div>
+
+          {/* 3-IMG-Container */}
+          <div className='Show_img-3 w-[90%] h-[90dvh]  rounded-[20px] absolute top-[100%] will-change-transform overflow-hidden '>
+            <img className='w-full h-full object-cover object-center' src={img6} alt="" />
+          </div>
+
+
+
+        </div>
+
+        {/* Container-5  */}
+        <div className='w-full h-fit flex bg-[#202020]'>
 
         </div>
 
