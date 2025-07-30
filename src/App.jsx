@@ -27,17 +27,6 @@ const App = () => {
 
   const TL1 = gsap.timeline()
 
-  const screenWidth = window.innerWidth;
-  let rightRotate = 20;
-  let leftRotate = -20;
-
-  if (screenWidth < 768) {
-    rightRotate = 8;
-    leftRotate = -8;
-  } else if (screenWidth < 1024) {
-    rightRotate = 12;
-    leftRotate = -12;
-  }
 
   // ---------------------------------------- FUNCTIONS
 
@@ -106,96 +95,6 @@ const App = () => {
       ease: 'power1.inOut'
     }, 'a2')
 
-    // Title For All Devices 
-    TL1.to('.TTtitle, .TT-p', {
-      opacity: 1,
-      stagger: 0.3,
-      duration: 0.7,
-      ease: 'power3.inOut'
-
-    }, 'a3')
-
-
-    // 3_IMG
-    TL1.to('.C2_img_main', {
-      delay: -0.2,
-      y: '0%',
-      duration: 0.7,
-      ease: 'power3.inOut'
-    })
-    TL1.to('.C2_img_Right', {
-      rotate: rightRotate,
-      duration: 0.7,
-      ease: 'power3.inOut'
-    }, 'a4')
-    TL1.to('.C2_img_left', {
-      rotate: leftRotate,
-      duration: 0.7,
-      ease: 'power3.inOut'
-    }, 'a4')
-    TL1.to('.cont-3', {
-      opacity: 1,
-      duration: 0.7,
-      ease: 'power3.inOut'
-    }, 'a4')
-
-
-  }
-
-  const slideShow = () => {
-    gsap.to('.slide-text-box', {
-      x: '-50%',
-      duration: 10,
-      ease: 'linear',
-      repeat: -1
-    })
-  }
-
-  const ShowImages = () => {
-    const TL2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.Show_Img_Cont',
-        start: 'top top',
-        end:'+=400%',
-        // markers: true,
-        scrub: 1,
-        pin: true
-      }
-    })
-    TL2.to('.Show_img-1',{
-      width:'90%',
-      height:'90dvh',
-      // duration:'1',
-      ease:'linear'
-    })
-    TL2.to('.Show_img-1',{
-      scale:0.8,
-      ease:'linear'
-    },'b1')
-    TL2.to('.Show_img-2',{
-      top:'5%',
-      ease:'linear'
-    },'b1')
-    TL2.to('.TChangeT',{
-      y:'-2.5rem',
-      delay:-0.02,
-      ease:'linear'
-    },'b1')
-    TL2.to('.Show_img-2',{
-      scale:0.8,
-      ease:'linear'
-    },'b2')
-    TL2.to('.Show_img-3',{
-      top:'5%',
-      ease:'linear'
-    },'b2')
-    TL2.to('.TChangeT',{
-      y:'-5rem',
-       delay:-0.02,
-      ease:'linear'
-    },'b2')
-
-
   }
 
   // ---------------------------------------- 
@@ -212,8 +111,7 @@ const App = () => {
 
   useEffect(() => {
     welcomeAnimation()
-    slideShow()
-    ShowImages()
+
   }, [])
 
 
@@ -286,108 +184,6 @@ const App = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Container-2 ~ Home Main */}
-        <div className='w-full h-fit bg-[#202020] flex flex-col  max-sm:px-[20px] sm:px-[40px] items-center justify-center md:items-start overflow-hidden relative'>
-
-          {/* Title For All Devices  */}
-          <div className=' w-full h-fit flex flex-col max-md:mt-[40px] z-[80] will-change-transform justify-center items-center max-w-[370px] md:max-w-[600px] md:mt-[20px] lg:max-w-full  text-center md:text-start lg:items-start select-none'>
-            <h1 className='TrapB TTtitle text-[2.4rem] leading-[2.4rem] opacity-0  md:text-[2rem] md:leading-[2rem] text-[#efefef] tracking-tight lg:max-w-[500px] '>Discover Style & Find Your Perfect Pair & Own Style.</h1>
-            <div className='w-fit h-fit  flex lg:text-justify lg:w-full lg:justify-end'>
-              <p className='px-[10px] TT-p mt-[17px] md:mt-[10px] opacity-0 will-change-transform text-[1.2rem] leading-[1.2rem]  md:text-[1rem] md:leading-[1rem] md:px-[0px] text-[#D4D4D4] lg:max-w-[400px]'>Unlock your true pontential proven strategies to sharpen  your mind, boost productivity and achive what matters most.</p>
-            </div>
-          </div>
-
-
-          {/* 3_IMG */}
-          <div className='w-full h-fit flex flex-col justify-center items-center'>
-
-            {/* All Images Mid-Center */}
-            <div className='C2_img_main w-[300px] h-[470px] z-[99] max-sm:mt-[40px] mt-[90px] md:mt-[40px] relative max-sm:w-[250px] max-sm:h-[370px] translate-y-[130%]'>
-
-              {/* Main Image */}
-              <div className=' w-full h-full bg-cyan-400 absolute top-0 z-[80] max-sm:w-[250px] overflow-hidden rounded-[10px] '>
-                <img className='w-full h-full object-cover object-center' src={img1} alt="" />
-              </div>
-
-              {/* Main-Right-IMG */}
-              <div className='C2_img_Right w-full h-full bg-orange-400 absolute top-6 origin-bottom rotate-0 max-md:rotate-0 max-sm:rotate-0 max-sm:w-[250px] overflow-hidden rounded-[10px] z-[79]'>
-                <img className='w-full h-full object-cover object-center' src={img2} alt="" />
-              </div>
-
-              {/* Main-Leftt-IMG */}
-              <div className='C2_img_left w-full h-full bg-pink-400 absolute top-6 origin-bottom rotate-0 max-md:-rotate-0 max-sm:-rotate-0 max-sm:w-[250px] overflow-hidden rounded-[10px] z-[79]'>
-                <img className='w-full h-full object-cover object-center' src={img3} alt="" />
-              </div>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-        {/* Container-3 ~ Logo-Slider */}
-        <div className='cont-3 opacity-0 w-full h-fit bg-[#202020] overflow-hidden flex pt-[50px] select-none'>
-
-          <span className='slide-text-box w-fit flex text-[5rem] TrapSB text-[#efefef] whitespace-nowrap will-change-transform'>
-            <h1>CLEAR FOCUS</h1>
-            <h1 className='text-[#bb1212]'>*</h1>
-            <h1 className=' blur-[4px]'>CLEAR FOCUS</h1>
-            <h1 className='text-[#bb1212]'>*</h1>
-            <h1>CLEAR FOCUS</h1>
-            <h1 className='text-[#bb1212]'>*</h1>
-            <h1 className=' blur-[4px]'>CLEAR FOCUS</h1>
-            <h1 className='text-[#bb1212]'>*</h1>
-          </span>
-          <span className='slide-text-box w-fit flex text-[5rem] TrapSB text-[#efefef] whitespace-nowrap will-change-transform'>
-            <h1>CLEAR FOCUS</h1>
-            <h1 className='text-[#bb1212]'>*</h1>
-            <h1 className=' blur-[4px]'>CLEAR FOCUS</h1>
-            <h1 className='text-[#bb1212]'>*</h1>
-            <h1>CLEAR FOCUS</h1>
-            <h1 className='text-[#bb1212]'>*</h1>
-            <h1 className=' blur-[4px]'>CLEAR FOCUS</h1>
-            <h1 className='text-[#bb1212]'>*</h1>
-          </span>
-
-        </div>
-
-        {/* Container-4 Show-Images-Animate */}
-        <div className='Show_Img_Cont w-full h-[100dvh] flex flex-col bg-[#202020] items-center justify-center relative overflow-hidden '>
-
-
-          {/* 1-IMG-Container */}
-          <div className='Show_img-1 w-[50%] h-[50dvh] rounded-[20px] will-change-transform overflow-hidden '>
-            <img className='w-full h-full object-cover object-center' src={img4} alt="" />
-          </div>
-
-          {/* 2-IMG-Container */}
-          <div className='Show_img-2 w-[90%] h-[90dvh]  rounded-[20px] absolute top-[100%] will-change-transform overflow-hidden '>
-            <img className='w-full h-full object-cover object-center' src={img5} alt="" />
-          </div>
-
-          {/* 3-IMG-Container */}
-          <div className='Show_img-3 w-[90%] h-[90dvh]  rounded-[20px] absolute top-[100%] will-change-transform overflow-hidden '>
-            <img className='w-full h-full object-cover object-center' src={img6} alt="" />
-          </div>
-
-          {/* Text_Change */}
-          
-
-            <div className='w-fit h-[2.5rem] flex defText flex-col text-[2.5rem] TrapSB leading-[2.5rem] tracking-tight absolute top-[80%] left-[50%] translate-x-[-50%] overflow-hidden'>
-              <span className='TChangeT'>#ClearFocus</span>
-              <span className='TChangeT'>#OwnStyle</span>
-              <span className='TChangeT'>#OwnMood</span>
-            </div>
-
-
-        </div>
-
-        {/* Container-5  */}
-        <div className='w-full h-fit flex bg-[#202020]'>
-
         </div>
 
 
