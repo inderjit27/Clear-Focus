@@ -9,16 +9,18 @@
     font-family: TrapSB;
     src: url('../src/fonts/Trap-SemiBold.woff2');
 }
+
 @font-face {
     font-family: TrapR;
     src: url('../src/fonts/Trap-Regular.woff2');
 }
+
 @font-face {
     font-family: TrapB;
     src: url('../src/fonts/Trap-Bold.woff2');
 }
 
-body{
+body {
     background-color: #202020;
 }
 
@@ -26,19 +28,28 @@ body{
     font-family: TrapM;
 }
 
-.TrapSB{
+.TrapSB {
     font-family: TrapSB;
 }
 
-.TrapR{
+.TrapR {
     font-family: TrapR;
 }
 
-.TrapB{
+.TrapB {
     font-family: TrapB;
 }
 
-.defText{
+.defText {
     color: #fff;
-    mix-blend-mode: difference;    
+    mix-blend-mode: difference;
 }
+
+.grad {
+    background: #262222;
+    background: linear-gradient(2deg, rgba(38, 34, 34, 0.37) 0%, rgba(0, 0, 0, 0) 64%);
+}
+
+
+
+
