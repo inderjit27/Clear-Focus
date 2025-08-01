@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+::-webkit-scrollbar {
+    display:none;
+}
+
 @font-face {
     font-family: TrapM;
     src: url('../src/fonts/Trap-Medium.woff2');
@@ -50,6 +54,12 @@ body {
     background: linear-gradient(2deg, rgba(38, 34, 34, 0.37) 0%, rgba(0, 0, 0, 0) 64%);
 }
 
-
-
+.scroll-lock {
+    overflow:hidden;
+    height: 100%;
+    position: fixed;
+    width:100%;
+    top: 0;
+    left: 0;
+}
 

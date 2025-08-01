@@ -1,4 +1,4 @@
-import { useEffect} from 'react'
+import { useEffect } from 'react'
 import Lenis from 'lenis'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -94,7 +94,10 @@ const App = () => {
       opacity: 0,
       display: 'none',
       duration: 0.02,
-      ease: 'power1.inOut'
+      ease: 'power1.inOut',
+      onComplete: () => {
+        document.body.classList.remove("scroll-lock");
+      }
     }, 'a2')
 
   }
@@ -159,18 +162,18 @@ const App = () => {
   }
 
   const RoundCircle = (item) => {
-    gsap.to(item,{
-      rotate:180,
-      duration:0.5,
-      ease:'power1.inOut'
+    gsap.to(item, {
+      rotate: 180,
+      duration: 0.5,
+      ease: 'power1.inOut'
     })
   }
 
   const PreRoundCircle = (item) => {
-    gsap.to(item,{
-      rotate:0,
-      duration:0.5,
-      ease:'power1.inOut'
+    gsap.to(item, {
+      rotate: 0,
+      duration: 0.5,
+      ease: 'power1.inOut'
     })
   }
 
@@ -187,6 +190,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    document.body.classList.add("scroll-lock");
     welcomeAnimation()
     Slidelogotext()
     ShowContDataImg()
@@ -350,16 +354,70 @@ const App = () => {
 
         {/* Circle-div */}
         <div className='w-full h-fit justify-end items-end flex max-md:px-[20px] md:px-[40px] py-[40px] gap-[7px]'>
-          
+
           {/* Circle-1 */}
-          <div onMouseEnter={()=> RoundCircle('.C1')} onMouseLeave={()=> PreRoundCircle('.C1')}  className='C1 w-[45px] h-[45px] flex justify-center items-center overflow-hidden rounded-full bg-[#efefef] select-none cursor-pointer'>
+          <div onMouseEnter={() => RoundCircle('.C1')} onMouseLeave={() => PreRoundCircle('.C1')} className='C1 w-[45px] h-[45px] flex justify-center items-center overflow-hidden rounded-full bg-[#efefef] select-none cursor-pointer'>
             < FiArrowUpRight className='text-[25px] text-[#202020]' />
           </div>
 
           {/* Circle-2 */}
-          <div onMouseEnter={()=> RoundCircle('.C2')} onMouseLeave={()=> PreRoundCircle('.C2')}  className='C2 w-[45px] h-[45px] flex justify-center items-center overflow-hidden rounded-full bg-[#efefef] select-none cursor-pointer'>
+          <div onMouseEnter={() => RoundCircle('.C2')} onMouseLeave={() => PreRoundCircle('.C2')} className='C2 w-[45px] h-[45px] flex justify-center items-center overflow-hidden rounded-full bg-[#efefef] select-none cursor-pointer'>
             < FiArrowUpRight className='text-[25px] text-[#202020]' />
           </div>
+
+        </div>
+
+        {/* Social-div */}
+        <div className='w-full h-fit flex justify-between items-center max-md:px-[20px] md:px-[40px] mb-[50px]
+        max-md:py-[20px] md:py-[40px]'>
+
+          {/* LinkedIn */}
+          <a href="https://www.linkedin.com/in/inderjitsingh-webdeveloper?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+            <div onMouseEnter={() => ActivateHoverEffect('.LinkedIn-Text', '-1rem')} onMouseLeave={() => DeActivateHoverEffect('.LinkedIn-Text', '0px')} className='w-fit h-[1rem] flex flex-col overflow-hidden select-none cursor-pointer'>
+              <span className='LinkedIn-Text w-fit h-fit TrapM text-[#efefef] text-[1rem] leading-[1rem] tracking-tight'>
+                <p>LinkedIn</p>
+              </span>
+              <span className='LinkedIn-Text w-fit h-fit TrapM text-[#efefef] text-[1rem] leading-[1rem] tracking-tight'>
+                <p>LinkedIn</p>
+              </span>
+            </div>
+          </a>
+
+          {/* Instagram */}
+          <a href="https://www.instagram.com/coddzin/">
+            <div onMouseEnter={() => ActivateHoverEffect('.Instagram-Text', '-1rem')} onMouseLeave={() => DeActivateHoverEffect('.Instagram-Text', '0px')} className='w-fit h-[1rem] flex flex-col overflow-hidden select-none cursor-pointer'>
+              <span className='Instagram-Text w-fit h-fit TrapM text-[#efefef] text-[1rem] leading-[1rem] tracking-tight'>
+                <p>Instagram</p>
+              </span>
+              <span className='Instagram-Text w-fit h-fit TrapM text-[#efefef] text-[1rem] leading-[1rem] tracking-tight'>
+                <p>Instagram</p>
+              </span>
+            </div>
+          </a>
+
+          {/* Twitter/X */}
+          <a href="https://x.com/inderjit_2?s=11">
+            <div onMouseEnter={() => ActivateHoverEffect('.TwitterX-Text', '-1rem')} onMouseLeave={() => DeActivateHoverEffect('.TwitterX-Text', '0px')} className='w-fit h-[1rem] flex flex-col overflow-hidden select-none cursor-pointer'>
+              <span className='TwitterX-Text w-fit h-fit TrapM text-[#efefef] text-[1rem] leading-[1rem] tracking-tight'>
+                <p>Twitter/X</p>
+              </span>
+              <span className='TwitterX-Text w-fit h-fit TrapM text-[#efefef] text-[1rem] leading-[1rem] tracking-tight'>
+                <p>Twitter/X</p>
+              </span>
+            </div>
+          </a>
+
+          {/* GitHub */}
+          <a href="https://github.com/inderjit27">
+            <div onMouseEnter={() => ActivateHoverEffect('.GitHub-Text', '-1rem')} onMouseLeave={() => DeActivateHoverEffect('.GitHub-Text', '0px')} className='w-fit h-[1rem] flex flex-col overflow-hidden select-none cursor-pointer'>
+              <span className='GitHub-Text w-fit h-fit TrapM text-[#efefef] text-[1rem] leading-[1rem] tracking-tight'>
+                <p>GitHub</p>
+              </span>
+              <span className='GitHub-Text w-fit h-fit TrapM text-[#efefef] text-[1rem] leading-[1rem] tracking-tight'>
+                <p>GitHub</p>
+              </span>
+            </div>
+          </a>
 
         </div>
 
